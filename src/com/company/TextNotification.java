@@ -9,19 +9,24 @@ public class TextNotification extends Notification {
         super(subject, body);
         this.recipient = recipient;
         this.smsProvider = smsProvider;
+
+        printSomeText();
     }
 
     public String getRecipient() {
+
         return recipient;
+
     }
 
     public String getSmsProvider() {
+
         return smsProvider;
+
     }
 
     @Override
     public void transport() {
-        super.transport();
-        System.out.println();
+        System.out.println("Recipient is: " + getRecipient() + "Provider is: " + getSmsProvider() + "Subject is: "  +  getSubject() + "body is: " + getBody());
     }
 }
