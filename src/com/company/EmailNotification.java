@@ -2,7 +2,7 @@ package com.company;
 
 import java.time.LocalDateTime;
 
-public class EmailNotification extends Notification {
+public class EmailNotification extends Notification implements Cloneable{
 
     private String recipient;
     private String smtpProvider;
@@ -56,11 +56,13 @@ public class EmailNotification extends Notification {
         return result;
     }
 
+
+
+
     @Override
-    protected Object emailNotificationClone()  {
+    protected Object clone()  {
+
         return new EmailNotification(getSubject(), getBody(), getRecipient(), getSmtpProvider());
 
-        System.out.printf(emailNotificationClone().equals(EmailNotification));
     }
-    
 }

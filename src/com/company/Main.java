@@ -7,7 +7,9 @@ public class Main {
         EmailNotification email = new EmailNotification("me", "att&t", "him", "turd");
         TextNotification text = new TextNotification("you", "verison", "her", "meh");
 
-        Object emailNotificationClone = EmailNotification.clone();
+        EmailNotification cloned =  (EmailNotification) email.clone();
+
+        System.out.println(cloned);
 
         email.transport();
         text.transport();
